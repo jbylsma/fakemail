@@ -17,4 +17,8 @@ new PHP version is installed.
 for dir in /usr/local/etc/php/*; do
   printf 'sendmail_path = /usr/local/bin/fakemail\n' >"${dir}/conf.d/fakemail.ini"
 done
+
+brew services list |\
+  awk '$1 ~ "^php@" && $2 == "started" { print $1; }' |\
+  xargs -I{} brew services restart {}
 ```
