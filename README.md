@@ -2,16 +2,16 @@
 
 A simple Bash script to redirect PHP mail requests to a local log file.
 
-Created to work with Homebrew PHP installs.
+Designed to work with Homebrew PHP installs.
 
 # Install
 
 ```sh
-brew tap jbylsma/fakemail
+ln -s $(pwd)/fakemail /usr/local/bin/fakemail
 ```
 
-Configure all PHP versions with fakemail. This must be run manually whenever a
-new PHP version is installed.
+All PHP versions must be configured to use fakemail. This must be run manually
+whenever a new PHP version is installed.
 
 ```sh
 for dir in /usr/local/etc/php/*; do
